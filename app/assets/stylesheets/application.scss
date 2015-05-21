@@ -128,7 +128,12 @@ fieldset {
       position: absolute;
       left: 50%;
       margin-left: -400px;
+      opacity: 0;
     }
+  }
+  
+  #count {
+    padding-top: 20px;
   }
 
   .arrow {
@@ -143,5 +148,17 @@ fieldset {
     &.arrow-right {
       right:0px;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  #slider .arrow {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  #slider .arrow {
+    width: 40px;
   }
 }
