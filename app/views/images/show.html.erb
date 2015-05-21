@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @image.name %>
+  <%= image_tag @image.file.url :big %>
 </p>
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<div class="clearfix"></div>
+<strong>Name:</strong>
+<%= @image.name %>
+
+<div class="clearfix"></div>
+<%= link_to (fa_icon 'pencil'), edit_image_path(@image) %> |
+<%= link_to (fa_icon 'arrow-left'), images_path, title: 'Voltar' %>

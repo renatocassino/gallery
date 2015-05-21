@@ -2,21 +2,22 @@
 
 <h1>Listing Images</h1>
 
-<div class="row image-box">
+<div class="container image-box">
   <% @images.each do |image| %>
     <div class="col-md-3">
-      <div class="image-thumb"><%= image_tag image.file.url :medium, style: "max-width:100%" %></div>
-      <h3><%= image.name %></h3>
-      <hr/>
+      <div class="image-thumb">
+        <%= link_to (image_tag image.file.url :medium), image, title: 'Visualizar' %>
 
-      <ul>
-        <li><%= link_to (fa_icon 'eye'), image, title: 'Visualizar' %></li>
-        <li><%= link_to (fa_icon 'pencil'), edit_image_path(image), title: 'Editar' %></li>
-        <li><%= link_to (fa_icon 'times'), image, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir essa imagem?' }, title: 'Excluir' %></li>
-      </ul>
+        <ul>
+          <li><%= link_to (fa_icon 'pencil'), edit_image_path(image), title: 'Editar', class: "btn btn-info" %></li>
+          <li><%= link_to (fa_icon 'times'), image, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir essa imagem?' }, title: 'Excluir', class: "btn btn-danger" %></li>
+        </ul>
+      </div>
+      <h3><%= image.name %></h3>
+
     </div>
   <% end %>
 </div>
 <br>
 
-<%= link_to 'New Image', new_image_path %>
+<%= link_to (fa_icon 'plus 2x', :text => 'Adicionar imagem'), new_image_path %>

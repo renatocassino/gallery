@@ -6,9 +6,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="top-menu">
+  <%= link_to (image_tag "/images/globo.png"), welcome_index_path %>
+</div>
 
-<div class="col-xs-8 col-xs-offset-2 text-center">
-  <%= yield %>
+<div class="container">
+  <div class="pull-right">
+    <%= link_to (fa_icon "plus", :text => "Add new image"), new_image_path %>
+    <%= link_to (fa_icon "eye", :text => "List images"), images_path %>
+  </div>
+
+  <div class="text-center">
+    <%= yield %>
+  </div>
 </div>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

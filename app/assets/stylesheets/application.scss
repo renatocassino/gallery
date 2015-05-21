@@ -22,6 +22,17 @@ a:hover {
   background: inherit;
 }
 
+fieldset {
+  margin-top: 20px;
+}
+
+#preview_image {
+  max-width:100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px #ccc;
+  border-radius: 20px;
+}
 .image-box > div {
   padding-top: 10px;
   background: #E4F1FE;
@@ -48,25 +59,49 @@ a:hover {
     padding: 0px;
     margin: 0px;
     width:100%;
+    overflow: hidden;
+    position: relative;
+    height: 170px;
+
     img {
       max-width:100%;
       width: 100%;
     }
-  }
 
-  ul{
-    text-align:right;
-    list-style: none;
-    &> li {
-      display: inline-block;
+    &:hover ul {
+      bottom:0px;
+    }
 
-      a {
-        color: #000;
-        
-        &:hover {
-          color: #777;
+    ul{
+      position: absolute;
+      z-index: 99;
+      bottom: -60px;
+      right: 10px;
+      text-align:right;
+      list-style: none;
+      transition: all 0.1s;
+
+      &> li {
+        display: inline-block;
+
+        a {
+          color: #000;
+
+          &:hover {
+            color: #777;
+          }
         }
       }
     }
+  }
+}
+
+#top-menu {
+  text-align:center;
+  box-shadow: 0 1px 0 0px rgba(0,0,0,0.02),0 0px 7px 0px rgba(0,0,0,0.1);
+  padding: 10px;
+
+  img {
+    max-width:40px;
   }
 }
