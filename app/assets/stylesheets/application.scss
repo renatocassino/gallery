@@ -105,3 +105,43 @@ fieldset {
     max-width:40px;
   }
 }
+
+#slider {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+  position: relative;
+  -webkit-box-shadow: 0 2px 8px #ccc;
+  -moz-box-shadow: 0 2px 8px #ccc #ccc;
+  box-shadow: 0 2px 8px #ccc #ccc;
+  
+  .images {
+    overflow: hidden;
+    height: 400px;
+
+    img {
+      margin: 0 auto;
+      max-width: 100%;
+      position: absolute;
+      left: 50%;
+      margin-left: -400px;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    top:40%;
+    cursor: pointer;
+
+    &.arrow-left {
+      left:0px;
+    }
+
+    &.arrow-right {
+      right:0px;
+    }
+  }
+}
